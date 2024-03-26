@@ -1,0 +1,39 @@
+
+section.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5em;
+  padding:em(120px) 0;
+  align-items: center;
+  .contact-title {
+    @include typography($type: large, $lineHeight: 100px);
+  }
+  .contact-ask-us {
+    @include typography( $lineHeight: 48px,$color:$primary-coral,$fontSize:em(32px));
+  }
+  ul {
+    margin-top:em(32px);
+      .icon-info-card {
+        margin-bottom: em(8px);
+      }
+
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  }
+}

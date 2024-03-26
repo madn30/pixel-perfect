@@ -1,0 +1,15 @@
+.navbar {
+  display: flex;
+  grid-area: nav;
+  top: 0px;
+  right: 0px;
+  z-index: 10;
+  ul {
+    display: flex;
+    gap: 30px;
+  }
+  a {
+    @include btn($type: regular, $padding: 0);
+    display: block;
+  }
+}

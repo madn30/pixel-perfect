@@ -1,0 +1,14 @@
+section.contact-wrapper {
+  background-color: $primary-coral;
+  padding: em(70px) 0;
+  .contact-body {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 0 em(180px);
+    gap: 20px;
+    .contact-title {
+        @include typography($type:medium,$color:$secondary-dark);
+
+    }
+  }
+}

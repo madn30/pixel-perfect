@@ -1,0 +1,13 @@
+.icon-info-card {
+  gap: em(23px);
+  display: flex;
+  align-items: center;
+  .icon-info-card-image {
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    width: auto;
+  }
+  .icon-info-card-content {
+    display: block;
+  }
+}

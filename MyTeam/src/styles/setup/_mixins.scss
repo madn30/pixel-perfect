@@ -1,0 +1,172 @@
+/* Media queries Breakpoint mixins */
+
+@mixin for-mobile-layout {
+  @media (max-width: $break-narrow) {
+    @content;
+  }
+}
+
+@mixin for-narrow-layout {
+  @media (min-width: $break-narrow) {
+    @content;
+  }
+}
+
+@mixin for-normal-layout {
+  @media (min-width: $break-normal) {
+    @content;
+  }
+}
+
+@mixin for-wide-layout {
+  @media (min-width: $break-wide) {
+    @content;
+  }
+}
+
+
+@mixin layoutGTC($max) {
+  grid-template-columns:
+    minmax($layoutPadding, 1fr)
+    minmax(auto, $max)
+    minmax($layoutPadding, 1fr);
+}
+
+/* Media  Mixins */
+
+//aspect ratio mixin
+@mixin aspect-ratio($width: 1, $height: 1) {
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: "";
+    display: block;
+    padding-top: calc(($height / $width) * 50%); 
+  }
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  > img {
+    width: 100%;
+    height: auto; 
+    object-fit: cover;
+  }
+}
+// Mixin for removing hover efects on iphone screen
+@mixin hover-supported {
+  @media not all and (pointer: coarse) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// Buttons
+
+@mixin btn(
+  $type: regular,
+  $bg: transparent,
+  $primary-white: $primary-white,
+  $padding: em(10px) em(20px),
+  $hover: darken($bg, 8%)
+) {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  padding: $padding;
+  line-height: 1.25;
+  font-size: em(18px);
+  font-variation-settings: "wght" 430;
+  cursor: pointer;
+  border-radius: em(20px);
+  transition: background-color 0.2s;
+  background-color: $bg;
+  // background-color: transparent;
+  @if $type == regular {
+    background-color: $bg;
+    color: $primary-white;
+    // border: 1px solid $primary-white;
+    // &:hover {
+      //   background-color: $hover;
+      // }
+    } @else if $type == dark {
+      color: $secondary-dark;
+      border: 1px solid $secondary-dark;
+      &:hover {
+        background-color: $primary-white;
+        color: $primary-white;
+      }
+    } @else if $type == light {
+      color: $primary-white;
+      border: 1px solid $primary-white;
+    &:hover {
+      background-color: $primary-white;
+      color: $primary-white;
+    }
+  }
+}
+
+// Type
+
+@mixin type($type: bold) {
+  // type options:
+  // 1.bold
+  // 2.boldCondensed
+  // 3.condensed
+  @if $type == bold {
+    font-variation-settings: "wght" 430;
+  } @else if $type == boldCondensed {
+    font-variation-settings: "wght" 430, "wdth" 80;
+  } @else if $type == condensed {
+    font-variation-settings: "wdth" 80;
+    letter-spacing: em(6.72px);
+  } @else if $type == light {
+    font-variation-settings: "wght" 200;
+  }
+}
+
+//DIVIDER
+@mixin divider($type: light, $bg: $primary-coral, $margin: 0) {
+  border: 0;
+  height: em(4px);
+  width: 50px;
+  $bg: $bg;
+  margin: $margin;
+
+  @if $type == light {
+    background-color: $divider-light;
+  } @else if $type == dark {
+    background-color: $bg;
+  }
+  
+}
+
+// SCSS Typographic Mixin
+@mixin typography(
+  $type: "regular",
+  $fontSize: 16px,
+  $lineHeight: 1.5,
+  $padding: 0,
+  $textAlign: start,
+  $color: white
+) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  padding: $padding;
+  text-align: $textAlign;
+  color: $color;
+
+  @if $type == "small" {
+    font-size: em(32px);
+  } @else if $type == "medium" {
+    font-size: em(48px);
+  } @else if $type == "large" {
+    font-size: em(64px);
+  } @else if $type == "xl" {
+    font-size: em(100px);
+  }
+}

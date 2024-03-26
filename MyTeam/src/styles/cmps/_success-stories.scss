@@ -1,0 +1,44 @@
+section.success-details {
+  padding: em(77px) 0;
+  .success-details-title {
+    @include typography(
+      $type: medium,
+      $padding: 0 9%,
+      $textAlign: center
+    );
+  }
+  ul {
+    margin-top: em(56px);
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    li {
+      font-family: Livvic Semi Bold;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+    }
+  }
+  .success-details-list-content {
+    @include typography(
+      $fontSize: em(15px),
+      $lineHeight:25px,
+      $textAlign: center
+      );
+    }
+    .success-details-list-name {
+      margin-top: em(20px);
+      @include typography(
+      $fontSize: em(18px),
+      $textAlign: center,
+      $color:$secondary-light-blue,
+    );
+  }
+  img {
+    width: 50px;
+    border-radius: 50%;
+    margin-top: em(32px);
+  }
+}

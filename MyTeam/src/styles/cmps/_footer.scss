@@ -1,0 +1,50 @@
+.site-footer {
+  background-color: $secondary-dark;
+  padding: em(48px) 0;
+  .content-container {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    gap: 12em;
+    
+    > * {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .navigation-section {
+      color: #225352;
+
+      img {
+        width: 160px;
+      }
+    }
+
+    .contact-section {
+      color: $primary-gray;
+      font-size: 15px;
+    }
+
+    .social-media-section {
+      align-items: flex-end;
+
+      span {
+        color: $primary-gray;
+        font-size: 15px;
+      }
+
+      .icons-container {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        img {
+          cursor: pointer;
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}

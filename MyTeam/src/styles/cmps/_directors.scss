@@ -1,0 +1,18 @@
+section.directors {
+  text-align: center;
+  padding:em(140px) 0;
+  .directors-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2em;
+    .card {
+      padding: em(127px) em(56px);
+      background: $secondary-dark;
+    }
+  }
+  @include for-narrow-layout {
+    .directors-cards {
+      grid-template-columns: repeat(3, minmax(0px, 1fr));
+    }
+  }
+}

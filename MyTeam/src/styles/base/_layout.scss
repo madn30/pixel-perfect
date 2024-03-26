@@ -1,0 +1,34 @@
+.main-layout {
+  height: 100%;
+  display: grid;
+  grid-template-columns: $layoutPadding 1fr $layoutPadding;
+  grid-template-rows: auto 1fr auto;
+  > *.full {
+    grid-column: 1 / -1;
+  }
+
+  > *:not(.full) {
+    grid-column: 2;
+    display: grid;
+  }
+  .left-col {
+    grid-column: span 1;
+  }
+  .full-height {
+    min-height: 100vh;
+  }
+
+  @include for-narrow-layout {
+    @include layoutGTC($break-narrow);
+  }
+
+  @include for-normal-layout {
+    @include layoutGTC($break-normal);
+  }
+
+  @include for-wide-layout {
+    @include layoutGTC($break-wide);
+  }
+
+
+}

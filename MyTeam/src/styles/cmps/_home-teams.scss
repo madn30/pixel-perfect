@@ -1,0 +1,25 @@
+section.home-teams {
+  background-color: $secondary-dark;
+  padding:em(100px) 0;
+  .home-teams-details {
+    grid-template-columns: minmax(auto, 1fr) minmax(auto, 1fr);
+    gap: 20px;
+    @include for-mobile-layout  { 
+      grid-template-columns: 1fr;
+    }
+
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    li {
+      .icon-info-card-title{
+        @include typography( $lineHeight: 48px,$color:$primary-coral,$fontSize:em(18px));
+
+      }
+    }
+  }
+  hr {
+    @include divider($type: dark, $margin: 0 0 em(54px) 0);
+  }
+}

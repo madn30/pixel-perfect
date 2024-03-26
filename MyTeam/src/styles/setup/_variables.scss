@@ -1,0 +1,30 @@
+
+$primary-green: #014E56;
+$primary-coral: #F67E7E; 
+$primary-white: #FFFFFF;
+$primary-gray: #979797;
+
+$secondary-dark: #012F34; 
+$secondary-light: lighten($primary-coral, 20%); 
+$secondary-blue: #2C6269; 
+$secondary-light-blue: #79C8C7; 
+$divider-light : $secondary-light-blue;
+$divider-dark : $primary-coral;
+
+$text-dark: #2d2d2d; 
+$background-light: #FFFFFF;
+
+//TYPOGRAPHY 
+$font-family-livvic: 'Livvic', sans-serif;
+
+// LAYOUT
+$layoutPadding: 39px;
+
+// LAYOUT BREAKPOINTS
+$break-narrow: 1200px;
+$break-normal: 1360px;
+$break-wide: 1900;
+
+$padded-break-narrow: $break-narrow + $layoutPadding * 2;
+$padded-break-normal: $break-normal + $layoutPadding * 2;
+$padded-break-wide: $break-wide + $layoutPadding * 2;

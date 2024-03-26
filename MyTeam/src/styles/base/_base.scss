@@ -1,0 +1,147 @@
+// ::selection {
+//   background-color: $primary-white;
+//   color: $primary-white;
+// }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $font-family-livvic;
+  color: $primary-white;
+  line-height: 1.8;
+  line-height: lh(26px);
+
+  @media (max-width: 1300px) {
+    font-size: 13px;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: $primary-green;
+
+  @include for-normal-layout {
+    &.sidebar-open {
+      overflow: hidden;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  margin: 0;
+  line-height: lh(30px, 29px);
+}
+p {
+  margin: 0px;
+  padding: 0;
+}
+ul {
+  display: block;
+  list-style-type: none;
+  margin-block: unset;
+  margin-inline: unset;
+  padding: 0;
+}
+hr {
+  display: block;
+  unicode-bidi: isolate;
+  margin: 0;
+  margin-block: unset;
+  margin-inline: unset;
+}
+
+.body1 {
+  font-size: 18px;
+  line-height: 28px;
+  @include type(bold);
+}
+
+.body2 {
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 25px;
+}
+h2 {
+  font-size: em(48px);
+  @include type(boldCondensed);
+}
+
+h3 {
+  font-size: em(18px);
+  @include type(bold);
+}
+
+.divider {
+  @include divider;
+
+  &-light {
+    @include divider($type: light);
+  }
+
+  &-dark {
+    @include divider($type: dark);
+  }
+}
+
+img {
+  width: 100%;
+}
+
+.typography {
+  @include typography;
+  &-regular {
+    @include typography($type: regular);
+  }
+  &-small {
+    @include typography($type: small);
+  }
+
+  &-medium {
+    @include typography($type: medium);
+  }
+  &-large {
+    @include typography($type: large);
+  }
+  &-xl {
+    @include typography($type: xl);
+  }
+}
+
+.btn {
+  @include btn;
+
+  &-dark {
+    @include btn($type: dark);
+  }
+
+  &-light {
+    @include btn($type: light);
+  }
+  &-contain {
+    @include btn($type: dark,  $bg : $primary-white);
+  }
+}
+
+// links
+a {
+  color: $primary-white;
+  text-decoration: none;
+
+  &.active {
+    background-color: $primary-white;
+    color: $primary-white;
+  }
+}
+
+mark {
+  color: $primary-coral;
+  background-color: transparent;
+}

@@ -1,0 +1,22 @@
+section.about-info {
+  grid-template-columns: auto minmax(auto, 1fr);
+  gap: 12em;
+  padding: em(120px) 0;
+  
+  .about-info-title {
+    @include typography(
+      $type: large,
+      $lineHeight : 100px
+    );
+  }
+  .about-info-details {
+    margin-top: em(40px);
+    @include typography( $fontSize: em(18px));
+  }
+  .about-info-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
+}

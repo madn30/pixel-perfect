@@ -1,0 +1,31 @@
+.clients-info {
+  align-items: center;
+  background-color: $secondary-dark;
+  padding:em(140px) 0;
+  .clients-info-title {
+    @include typography($fontSize: em(48px), $textAlign: center);
+  }
+  img {
+    aspect-ratio: 12 / 3;
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .images-grid {
+    margin-top: em(30px);
+    gap: 5em;
+    display: grid;
+    justify-items: center;
+  }
+  @include for-narrow-layout {
+    .images-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @include for-normal-layout {
+    .images-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}
